@@ -4,11 +4,13 @@ Resource    locators\\locators.robot
 Suite Setup    Open Twitter Homepage
 Suite Teardown    Close Browser
 
+
 *** Keywords ***
 Open Twitter Homepage
     Open Browser    ${twitterUrl}    ${browser}
     ${status}    Run Keyword and Return Status    Wait Until Page Contains    ${twitterHome}    30
     Run Keyword If    '${status}'=='False'    Open Twitter Homepage
+
 
 *** Test Case ***
 Perform Login
