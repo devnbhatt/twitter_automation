@@ -14,7 +14,7 @@ Open Twitter Homepage
 
 *** Test Case ***
 Perform Login
-	[Tags]    TC_01
+    [Tags]    TC_01
     # Check if login button visible or not and click if visible
     ${loginBtnStatus}    Run Keyword and Return Status    Wait Until Page Contains Element    ${loginBtnOnHome}    15
     Run Keyword If    '${loginBtnStatus}' == 'True'    Click Element    ${loginBtnOnHome}
@@ -24,16 +24,16 @@ Perform Login
     Run Keyword If    '${emailInputStatus}' == 'True'    Input Text    ${inputEmail}    ${email}
     Run Keyword If    '${emailInputStatus}' == 'True'    Run Keywords    Click Element    ${nextButton}    AND    Sleep    5
 	
-	# Check if Getting unusual activity screen
-	${unusualActivityStatus}    Run Keyword and Return Status    Wait Until Page Contains    ${unusualActivityMsg}    5
-	${mobileNumberStatus}    Run Keyword and Return Status    Should Not Be Empty    ${mobile}
-	${userNameStatus}    Run Keyword and Return Status    Should Not Be Empty    ${userName}
-	${enterCredential}    Set Variable If    '${userNameStatus}' == 'True'    ${userName}    ${mobile}
+    # Check if Getting unusual activity screen
+    ${unusualActivityStatus}    Run Keyword and Return Status    Wait Until Page Contains    ${unusualActivityMsg}    5
+    ${mobileNumberStatus}    Run Keyword and Return Status    Should Not Be Empty    ${mobile}
+    ${userNameStatus}    Run Keyword and Return Status    Should Not Be Empty    ${userName}
+    ${enterCredential}    Set Variable If    '${userNameStatus}' == 'True'    ${userName}    ${mobile}
 	
-	# Enter Password and Do the login
-	Run Keyword If    '${emailInputStatus}' == 'True'    Input Text    ${enterUserCredential}    ${enterCredential}
+    # Enter Password and Do the login
+    Run Keyword If    '${emailInputStatus}' == 'True'    Input Text    ${enterUserCredential}    ${enterCredential}
     Run Keyword If    '${emailInputStatus}' == 'True'    Run Keywords    Click Element    ${nextStep}    AND    Sleep    5
-	${passwordInputStatus}    Run Keyword and Return Status    Wait Until Page Contains Element    ${passwordField}    15
+    ${passwordInputStatus}    Run Keyword and Return Status    Wait Until Page Contains Element    ${passwordField}    15
     Run Keyword If    '${passwordInputStatus}' == 'True'    Input Password    ${passwordField}    ${password}
     Run Keyword If    '${passwordInputStatus}' == 'True'    Run Keywords    Click Element    ${signinButton}    AND    Sleep    15
 
@@ -44,16 +44,16 @@ Perform Login
     Run Keyword If    '${profilePageStatus}' == 'False'    FAIL    Twitter Login Unsuccessful
 
 Perform Logout
-	[Tags]    TC_02
-	# Do the logout if logged in successfully
-	Run Keyword If     '${PREV TEST STATUS}'=='FAIL'    Fail    Precondition Not Match
-	${status}    Run Keyword and Return Status    Wait Until Page Contains Element    ${accounts}    15
-	Run Keyword If    '${status}' == 'True'    Click Element    ${accounts}
-	${status}    Run Keyword and Return Status    Wait Until Page Contains Element    ${logoutBtn}    15
-	Run Keyword If    '${status}' == 'True'    Click Element    ${logoutBtn}
-	${status}    Run Keyword and Return Status    Wait Until Page Contains Element    ${confirmLogout}    15
-	Run Keyword If    '${status}' == 'True'    Click Element    ${confirmLogout}
-	
-	# Verify if logout successfully or not
+    [Tags]    TC_02
+    # Do the logout if logged in successfully
+    Run Keyword If     '${PREV TEST STATUS}'=='FAIL'    Fail    Precondition Not Match
+    ${status}    Run Keyword and Return Status    Wait Until Page Contains Element    ${accounts}    15
+    Run Keyword If    '${status}' == 'True'    Click Element    ${accounts}
+    ${status}    Run Keyword and Return Status    Wait Until Page Contains Element    ${logoutBtn}    15
+    Run Keyword If    '${status}' == 'True'    Click Element    ${logoutBtn}
+    ${status}    Run Keyword and Return Status    Wait Until Page Contains Element    ${confirmLogout}    15
+    Run Keyword If    '${status}' == 'True'    Click Element    ${confirmLogout}
+    
+    # Verify if logout successfully or not
     ${status}    Run Keyword and Return Status    Wait Until Page Contains    ${twitterHome}    30
-	Run Keyword If    '${status}' == 'False'    FAIL    Homepage Not Visible.
+    Run Keyword If    '${status}' == 'False'    FAIL    Homepage Not Visible.
