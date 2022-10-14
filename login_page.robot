@@ -15,6 +15,7 @@ Open Twitter Homepage
 *** Test Case ***
 Perform Login
     [Tags]    TC_01
+    [Documentation]    Perform Login in the account
     # Check if login button visible or not and click if visible
     ${loginBtnStatus}    Run Keyword and Return Status    Wait Until Page Contains Element    ${loginBtnOnHome}    15
     Run Keyword If    '${loginBtnStatus}' == 'True'    Click Element    ${loginBtnOnHome}
@@ -45,6 +46,7 @@ Perform Login
 
 Perform Logout
     [Tags]    TC_02
+    [Documentation]    Perform Logout in the account
     # Do the logout if logged in successfully
     Run Keyword If     '${PREV TEST STATUS}'=='FAIL'    Fail    Precondition Not Match
     ${status}    Run Keyword and Return Status    Wait Until Page Contains Element    ${accounts}    15
