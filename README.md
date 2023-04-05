@@ -3,9 +3,10 @@ This Repository has the code to do the twitter login functionality automation.
 This uses Python and Robot Framework with selenium for that.
 
 ### Pre-requisite
-Whatever browser you wanted to use, please keep its stable driver (matching to the version of browser installed in your system) in the system environment variable. Drivers can be downloaded from below links
-Edge : https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
-Chrome : https://chromedriver.chromium.org/downloads
+Whatever browser you wanted to use, please keep its stable driver (matching to the version of browser installed in your system) in the system environment variable. Drivers can be downloaded from below links.
+
+Edge : https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/ <br />
+Chrome : https://chromedriver.chromium.org/downloads <br />
 Firefox : https://github.com/mozilla/geckodriver/releases
 
 ### Setup
